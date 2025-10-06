@@ -17,8 +17,8 @@ model.to(device)
 
 # TODO: 设置你的 training parameters
 num_epochs = 20
-lr = 0.003
-weight_decay = 0.00001
+lr = 0.001
+weight_decay = 0.0001
 
 # TODO: 设置你的 cross-entropy loss function
 loss_fn = nn.CrossEntropyLoss()
@@ -27,7 +27,7 @@ loss_fn = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
 
 # TODO: 设置你的 learning rate scheduler
-scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9, last_epoch=-1)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(T_max=50)
 
 # 用于画图
 train_loss_list = []

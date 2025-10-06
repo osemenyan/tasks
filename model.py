@@ -25,9 +25,9 @@ class CNN(nn.Module):
         conv1_out=self.conv1(x)
         bn1=self.bn1(conv1_out)
         relu1=self.relu(bn1)
-        pool1=self.maxpool(relu1)
+       
 
-        conv2_out=self.conv2(pool1)
+        conv2_out=self.conv2(relu1)
         bn2=self.bn2(conv2_out)
         relu2=self.relu(bn2)
         pool2=self.maxpool(relu2)
